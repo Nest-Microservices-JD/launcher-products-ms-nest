@@ -6,7 +6,8 @@
 
 1. Clone the repository
 2. Create a .env file
-3. Run `docker compose up --build`
+3. Run `git submodule update --init --recursive` to update submodule
+4. Run `docker compose up --build` to start the project
 
 ## Using git submodule
 
@@ -25,3 +26,7 @@
 - to eliminate the submodule folder, use the command
 
 `rm -rf .git/modules/<directory_name>`
+
+- to update the submodule, use the command
+
+`git submodule update --init --recursive`
