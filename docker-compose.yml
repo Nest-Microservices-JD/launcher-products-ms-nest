@@ -16,7 +16,7 @@ services:
       - NATS_SERVERS=nats://nats-server:4222
     restart: always
 
-  products-app:
+  products-ms:
     build: ./products-ms
     ports:
       - "3001:3001"
@@ -30,7 +30,7 @@ services:
     restart: always
 
   #Order MicroService
-  orders-app:
+  orders-ms:
     build: ./orders-ms
     ports:
       - ${ORDERS_APP_PORT}:3002
