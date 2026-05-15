@@ -1,0 +1,3 @@
+[submodule "client-gateway"]
+	path = client-gateway
+	url = git@github.com:Nest-Microservices-JD/client-gateway.git
