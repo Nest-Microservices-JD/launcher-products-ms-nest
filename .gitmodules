@@ -1,9 +1,0 @@
-[submodule "client-gateway"]
-	path = client-gateway
-	url = git@github.com:Nest-Microservices-JD/client-gateway.git
-[submodule "products-ms"]
-	path = products-ms
-	url = git@github.com:Nest-Microservices-JD/products-ms.git
-[submodule "orders-ms"]
-	path = orders-ms
-	url = git@github.com:Nest-Microservices-JD/order-ms.git
