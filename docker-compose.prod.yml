@@ -11,7 +11,7 @@ services:
   # Client Gateway
   client-gateway:
     build:
-      context: ./client-gateway
+      context: ../client-gateway
       dockerfile: Dockerfile.prod
     ports:
       - ${CLIENT_GATEWAY_PORT}:${CLIENT_GATEWAY_PORT}
@@ -28,7 +28,7 @@ services:
   # Products MicroService
   products-app:
     build: 
-      context: ./products-ms
+      context: ../products-ms
       dockerfile: Dockerfile.prod
     image: southamerica-west1-docker.pkg.dev/store-microservice-497220/image-registry/products-ms-prod
     ports:
@@ -42,7 +42,7 @@ services:
   # Order MicroService
   orders-app:
     build: 
-      context: ./orders-ms
+      context: ../orders-ms
       dockerfile: Dockerfile.prod
       args:
         - ORDERS_DATABASE_URL=${ORDERS_DATABASE_URL}
@@ -58,7 +58,7 @@ services:
   # Payments MicroService
   payments-app:
     build: 
-      context: ./payments-ms
+      context: ../payments-ms
       dockerfile: Dockerfile.prod
     image: southamerica-west1-docker.pkg.dev/store-microservice-497220/image-registry/payments-ms-prod
     ports:
@@ -75,7 +75,7 @@ services:
   # Auth Microservice
   auth-app:
     build: 
-      context: ./auth-ms
+      context: ../auth-ms
       dockerfile: Dockerfile.prod
     image: southamerica-west1-docker.pkg.dev/store-microservice-497220/image-registry/auth-ms-prod
     ports:
