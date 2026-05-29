@@ -103,3 +103,8 @@ kubectl create -f <name>.yml
 - Error: INSTALLATION FAILED: unable to build Kubernetes objects from release manifest: error parsing : error converting YAML to JSON: yaml: invalid leading UTF-8 octet
 
 --> Execute: `kubectl create deployment client-gateway --image=us-east1-docker.pkg.dev/ms-store-459001/ms-store-registry/client-gateway-production --dry-run=client -o yaml | Out-File ./deployment.yml -Encoding UTF8`
+
+## Kubernetes Port-Forwarding
+
+1. `kubectl port-forward <name> 8888:8888`
+2. `kubectl port-forward <name> 8888:8888 --namespace <namespace>`

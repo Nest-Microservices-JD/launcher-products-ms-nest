@@ -1,4 +1,4 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -18,5 +18,14 @@ spec:
       containers:
       - image: southamerica-west1-docker.pkg.dev/store-microservice-497220/image-registry/client-gateway-prod
         name: client-gateway-prod
+        ports:
+          - name: http
+            containerPort: 3000
+            protocol: TCP
+        env:
+        - name: PORT
+          value: "3000"
+        - name: NATS_SERVERS
+          value: "nats://nats"
         resources: {}
 status: {}
