@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: payments-ms
+  name: payments-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payments-ms
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: payments-ms
+    spec:
+      containers:
+      - image: southamerica-west1-docker.pkg.dev/store-microservice-497220/image-registry/payments-ms-prod
+        name: payments-ms-prod
+        env:
+        - name: PORT
+          value: "3000"
+        - name: NATS_SERVERS
+          value: "nats://nats"
+        - name: STRIPE_SUCCESS_URL
+          value: "http://localhost:3003/api/v1/payments/success"
+        - name: STRIPE_CANCEL_URL
+          value: "http://localhost:3003/api/v1/payments/cancelled"
+        - name: STRIPE_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: payments-ms-secrets
+              key: stripe_secret_key
+        - name: STRIPE_ENDPOINT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: payments-ms-secrets
+              key: stripe_endpoint_secret
+        resources: {}
+status: {}

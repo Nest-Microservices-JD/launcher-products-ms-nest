@@ -12,6 +12,6 @@ spec:
     targetPort: 3000
   selector:
     app: client-gateway
-  type: {{ .Values.service.type }}
+  type: NodePort
 status:
   loadBalancer: {}

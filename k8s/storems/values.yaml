@@ -1,6 +1,0 @@
-service:
-  type: LoadBalancer
-  ports: 
-    - port: 31997
-      targetPort: 3000
-      protocol: TCP
